@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/AarthyB/BucketList/static/css/main.199eb5d1.css",
+    "main.js": "/AarthyB/BucketList/static/js/main.cd072ec7.js",
+    "index.html": "/AarthyB/BucketList/index.html",
+    "main.199eb5d1.css.map": "/AarthyB/BucketList/static/css/main.199eb5d1.css.map",
+    "main.cd072ec7.js.map": "/AarthyB/BucketList/static/js/main.cd072ec7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.199eb5d1.css",
+    "static/js/main.cd072ec7.js"
+  ]
+}
