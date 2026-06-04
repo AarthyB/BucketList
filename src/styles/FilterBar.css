@@ -1,0 +1,52 @@
+/* =============================================
+   FILTER BAR
+   ============================================= */
+
+.filter-bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
+  animation: fadeUp 0.5s 0.1s ease both;
+}
+
+.filter-bar__lbl {
+  font-size: 0.67rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  color: var(--text-dim);
+  font-weight: 600;
+  margin-right: 3px;
+  white-space: nowrap;
+}
+
+.f-btn {
+  padding: 6px 15px;
+  border-radius: var(--radius-pill);
+  font-size: 0.77rem;
+  font-weight: 500;
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  letter-spacing: 0.02em;
+  transition: all var(--transition);
+  white-space: nowrap;
+}
+
+.f-btn:hover {
+  border-color: var(--border-warm);
+  color: var(--amber);
+  background: var(--amber-soft);
+}
+
+.f-btn--on {
+  background: var(--amber-soft);
+  border-color: var(--border-warm);
+  color: var(--amber);
+  box-shadow: 0 0 12px rgba(245,158,11,0.1);
+}
+
+@media (max-width: 480px) {
+  .f-btn { padding: 5px 11px; font-size: 0.72rem; }
+}

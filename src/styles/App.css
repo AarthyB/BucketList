@@ -1,0 +1,208 @@
+/* =============================================
+   APP LAYOUT
+   ============================================= */
+
+.app {
+  min-height: 100vh;
+  padding: 56px 20px 100px;
+  animation: fadeIn 0.5s ease;
+}
+
+.app__container {
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ── Header ── */
+.app__header {
+  text-align: center;
+  margin-bottom: 52px;
+  animation: fadeUp 0.6s ease both;
+}
+
+.app__pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 5px 14px 5px 10px;
+  border-radius: var(--radius-pill);
+  background: var(--amber-soft);
+  border: 1px solid var(--border-warm);
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 24px;
+  animation: float 3.5s ease-in-out infinite;
+}
+
+.app__pill-dot {
+  width: 7px; height: 7px;
+  border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 6px var(--amber);
+  animation: softPulse 2s ease-in-out infinite;
+}
+
+.app__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.2rem, 10vw, 5.5rem);
+  font-weight: 700;
+  font-style: italic;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  margin-bottom: 16px;
+  color: var(--text-bright);
+  /* Subtle warm gradient */
+  background: linear-gradient(140deg, #faf5ec 20%, var(--amber-light) 55%, var(--sand) 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 6s linear infinite;
+}
+
+.app__subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  font-weight: 300;
+  letter-spacing: 0.01em;
+}
+
+/* ── Stats ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin-bottom: 32px;
+  animation: fadeUp 0.6s 0.08s ease both;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 18px 14px;
+  text-align: center;
+  transition: border-color var(--transition), transform var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 20%; right: 20%;
+  height: 1px;
+  border-radius: 99px;
+  opacity: 0.5;
+}
+
+.stat-card--dreams::after  { background: var(--lavender); }
+.stat-card--done::after    { background: var(--sage); }
+.stat-card--left::after    { background: var(--coral); }
+
+.stat-card:hover {
+  border-color: var(--border-warm);
+  transform: translateY(-2px);
+}
+
+.stat-card__n {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 600;
+  font-style: italic;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.stat-card--dreams .stat-card__n { color: var(--lavender); }
+.stat-card--done   .stat-card__n { color: var(--sage); }
+.stat-card--left   .stat-card__n { color: var(--coral); }
+
+.stat-card__l {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-dim);
+}
+
+/* ── Progress ── */
+.progress-wrap {
+  margin-bottom: 40px;
+  animation: fadeUp 0.6s 0.12s ease both;
+}
+
+.progress-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 8px;
+}
+
+.progress-label {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--text-dim);
+  font-weight: 600;
+}
+
+.progress-pct {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.1rem;
+  color: var(--amber);
+}
+
+.progress-track {
+  height: 5px;
+  background: var(--bg-card);
+  border-radius: 99px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--coral), var(--amber), var(--amber-light));
+  background-size: 200% 100%;
+  border-radius: 99px;
+  transition: width 0.7s cubic-bezier(0.4,0,0.2,1);
+  animation: shimmer 3s linear infinite;
+}
+
+/* ── List ── */
+.items-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Empty ── */
+.empty-state {
+  text-align: center;
+  padding: 64px 24px;
+  animation: fadeUp 0.4s ease;
+}
+
+.empty-state__icon { font-size: 3rem; margin-bottom: 14px; }
+
+.empty-state h3 {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.3rem;
+  color: var(--text-muted);
+  margin-bottom: 7px;
+}
+
+.empty-state p { font-size: 0.88rem; color: var(--text-dim); }
+
+/* ── Responsive ── */
+@media (max-width: 520px) {
+  .app { padding: 36px 14px 72px; }
+  .stats-row { gap: 7px; }
+  .stat-card { padding: 14px 10px; }
+  .stat-card__n { font-size: 1.7rem; }
+}
